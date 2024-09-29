@@ -16,16 +16,16 @@ const TaskCard: React.FC<TaskCardProps> = ({id, title, status, priority, userId,
   const user = users.find((user) => user.id === userId);
   const userName = user ? user.name : 'Unknown User';
 
-  // Map priority to the corresponding class
+  
   const priorityClass = [
-    'priority-no',    // No Priority (index 0)
-    'priority-low',   // Low (index 1)
-    'priority-medium', // Medium (index 2)
-    'priority-high',  // High (index 3)
-    'priority-urgent',  // Urgent (index 4, treated as high)
-  ][priority] || 'priority-no'; // Default to no priority if undefined
+    'priority-no',   
+    'priority-low',  
+    'priority-medium', 
+    'priority-high',  
+    'priority-urgent',  
+  ][priority] || 'priority-no';
 
-  // Function to get the image based on priority
+
   const getPriorityImage = (priority: number) => {
     switch (priority) {
       case 1:
@@ -47,13 +47,13 @@ const TaskCard: React.FC<TaskCardProps> = ({id, title, status, priority, userId,
         <div className="card-header">
          <h4>{id}</h4>
           <h3>{title}</h3>
-          <p><img src=".\No-priority.svg" alt="No Priority" className="priority-icon" />{status}</p>
+          <p>{status}</p>
         </div>
         <span className="tag user">{userName}</span>
       </div>
       <div className="card-details">
         <span className={`tag priority ${priorityClass}`}>
-          {/* Render the correct image based on priority */}
+    
           {getPriorityImage(priority)}
           {['No Priority', 'Low', 'Medium', 'High', 'Urgent'][priority]}
         </span>
