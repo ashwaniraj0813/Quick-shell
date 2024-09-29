@@ -47,7 +47,7 @@ const TaskCard: React.FC<TaskCardProps> = ({id, title, status, priority, userId,
         <div className="card-header">
          <h4>{id}</h4>
           <h3>{title}</h3>
-          <p>{status}</p>
+          <p><img src=".\No-priority.svg" alt="No Priority" className="priority-icon" />{status}</p>
         </div>
         <span className="tag user">{userName}</span>
       </div>
