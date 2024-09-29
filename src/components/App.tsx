@@ -42,7 +42,6 @@ const App: React.FC = () => {
   }, [grouping, sortBy]);
 
   useEffect(() => {
-    // Fetch tickets and users only if they are not already in localStorage
     if (tickets.length === 0 || users.length === 0) {
       axios
         .get("https://api.quicksell.co/v1/internal/frontend-assignment")
@@ -53,7 +52,7 @@ const App: React.FC = () => {
           setTickets(fetchedTickets);
           setUsers(fetchedUsers);
 
-          // Store fetched data in localStorage
+        
           localStorage.setItem("kanban-tickets", JSON.stringify(fetchedTickets));
           localStorage.setItem("kanban-users", JSON.stringify(fetchedUsers));
         })
