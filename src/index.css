@@ -1,13 +1,93 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+.kanban-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.kanban-board {
+  display: flex;
+  justify-content: space-between;
+  background-color: #DDE6ED;
+  
+}
+
+.kanban-column {
+  flex: 1;
+  padding: 10px;
+  background-color:#DDE6ED;
+  border-radius: 5px;
+  margin-right: 10px;
+  border-color: white;
+}
+
+.kanban-column h2 {
+  text-align: center;
+}
+
+.kanban-card {
+  background-color: white;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.kanban-card h3 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.kanban-card p {
+  margin: 5px 0;
+}
+
+.group {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size:x-large;
+}
+/* Styling for the container of label and select to align them neatly */
+.kanban-control {
+  display: flex;
+  align-items: center;
+  margin-right: 20px;
+}
+
+/* Styling for the label */
+.kanban-control label {
+  margin-right: 10px;
+  font-size: 30px;
+  font-weight: bolder;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  color: #060606;
+}
+
+/* Styling for the select box */
+.kanban-control select {
+  padding: 8px 12px;
+  font-size: 25px;
+  border-radius: 6px;
+  border: 1px solid #d9d9d9;
+  background-color: #ffffff;
+  color: #333;
+  transition: border-color 0.3s ease;
+  outline: none;
+  cursor: pointer;
+}
+
+/* Hover and focus effect for select */
+.kanban-control select:hover,
+.kanban-control select:focus {
+  border-color: #1890ff;
+}
+
+/* Responsive design: Stack label and select on small screens */
+@media (max-width: 600px) {
+  .kanban-control {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .kanban-control label {
+    margin-bottom: 5px;
+  }
 }
